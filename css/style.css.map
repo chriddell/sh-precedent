@@ -1,0 +1,17 @@
+{
+	"version": 3,
+	"file": "style.css",
+	"sources": [
+		"sass/style.scss",
+		"sass/partials/_settings.scss",
+		"sass/partials/_tools.scss",
+		"sass/partials/_generic.scss",
+		"sass/partials/_base.scss",
+		"sass/partials/_objects.scss",
+		"sass/partials/_components.scss",
+		"sass/partials/_trumps.scss"
+	],
+	"sourcesContent": [],
+	"mappings": "",
+	"names": []
+}
