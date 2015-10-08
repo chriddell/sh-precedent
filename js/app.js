@@ -1,7 +1,7 @@
 require.config({
   baseUrl: 'js/lib/',
   paths: {
-    "shiv": "min/html5-shiv"
+    "shiv": "min/html5-shiv.min"
   }
 });
 

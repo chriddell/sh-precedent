@@ -1,0 +1,38 @@
+/* Fonts */
+@font-face {
+    font-family: 'Clerkenwell';
+    src: url('../fonts/FS-Clerkenwell.ttf');
+}
+@font-face {
+    font-family: 'Clerkenwell';
+    src: url('../fonts/FS-Clerkenwell-Bold.otf');
+    font-weight: bold;
+}
+
+/* Type */
+$fnt-clerk: 'Clerkenwell', 'Times New Roman', serif;
+
+  /* Sizes */
+  $font-s: 1em;
+  $font-m: 1.25em;
+  $font-l: 1.75em;
+  $font-xl: 2.25em;
+  $font-xxl: 3em;
+
+
+/* Colors */
+$clr-darker: #313131;
+$clr-dark: #434343;
+$clr-med: #adadad;
+$clr-light: #d6d6d6;
+$clr-lighter: #ffffff;
+
+$clr-highlight-pink: #c92059;
+$clr-highlight-purple: #631b41; 
+
+/* Breakpoints */
+$breakpoints: (
+  'small'  : 767px,
+  'medium' : 992px,
+  'large'  : 1200px
+);

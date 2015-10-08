@@ -1,0 +1,49 @@
+body {
+  background: black;
+  font-size: 16px;
+  line-height: 1;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5 {
+  margin-top: 0;
+  font-family: $fnt-clerk;
+}  
+h1, 
+h2, 
+h3 {
+  font-weight: bold;
+}
+h1 {
+  font-size: $font-xl;
+}
+h2 {
+  font-size: $font-l;
+}
+h3 {
+  font-size: $font-m;
+}
+
+a, 
+a:visited {
+  color: $clr-lighter;
+  &:hover {
+    color: $clr-lighter;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+label {
+  display: block;
+  font-family: $fnt-clerk;
+  color: $clr-lighter;
+}

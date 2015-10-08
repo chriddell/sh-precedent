@@ -1,0 +1,191 @@
+/* Hero */
+.hero {
+  padding-top: 2em;
+  @include respond-to(large){
+    height: 100vh;
+    min-height: 620px;
+  }
+
+  &__title {
+    max-width: 200px;
+    line-height: 0.7;
+
+    @include respond-to(large) {
+      font-size: $font-xxl;
+      padding-top: 3.5em;
+      padding-top: 15vh;
+    }
+  }
+
+  &__subtitle {
+    @include respond-to(large) {
+      font-size: $font-xl;
+      padding-top: 1.75em;
+      padding-top: 15vh;
+    }
+  }
+
+  &__title, 
+  &__subtitle {
+    color: $clr-lighter;
+  }
+
+  &__image--background {
+    @include respond-to(large){
+      display: block;
+      height: 100vh;
+      min-height: 620px;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: url('../img/hero.png') no-repeat center center;
+      background-size: cover;
+      z-index: -1;
+    }
+  }
+}
+
+/* Menus */
+.menu {
+  margin: 0;
+  padding: 0;
+
+  &--inline {
+    li {
+      display: inline-block;
+    }
+  }
+}
+
+.hero .menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.menu--social {
+  &__item {
+    background-color: $clr-light;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+
+    &:not(:first-of-type){
+      margin-left: 1px;
+    }
+
+    a {
+      display: table;
+      height: 100%;
+      width: 100%;
+
+      > i {
+        font-size: $font-l;
+        display: table-cell;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+/* Forms */
+.form--homepage {
+  padding: 2em 0;
+
+  @include respond-to(large) {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+  }
+
+  label {
+    margin-bottom: 0.25em;
+
+    &:nth-of-type(2){
+      margin-top: 1em;
+    }
+  }
+
+  input:not([type='submit']) {
+    width: 100%;
+  }
+
+  select, 
+  input[type="submit"] {
+    float: left;
+  }
+
+  select {
+    width: 70%;
+    margin-right: 5%;
+  }
+
+  input[type='submit'] {
+    width: 25%;
+  }
+}
+
+/* Blocks */
+.blocks {
+  &__block {
+    display: table;
+    height: 125px;
+    min-width: 100%;
+    @include respond-to(small){
+      min-width: 0;
+      height: 200px;
+    }
+
+    > a {
+      display: table-cell;
+      vertical-align: middle;
+      font-size: $font-m;
+      font-family: $fnt-clerk;
+      text-align: center;
+    }
+
+    &:nth-of-type(odd) {
+      background-color: $clr-highlight-purple;
+    }
+
+    &:nth-of-type(even) {
+      background-color: $clr-highlight-pink;
+    }
+  }
+
+  img.blocks__block {
+    display: none;
+    @include respond-to(small){
+      display: table;
+    }
+  }
+}
+
+/* Footer */
+.footer--one, 
+.footer--two, 
+.footer--three {
+  padding: 2em 0;
+}
+
+.footer--one {
+  background: $clr-lighter;
+}
+
+.footer--two {
+  background: $clr-dark;
+}
+
+.footer--three {
+  background: $clr-darker;
+
+  p {
+    color: $clr-light;
+  }
+}
+
+aside {
+  display: none;
+}

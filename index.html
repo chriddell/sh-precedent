@@ -10,6 +10,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <!-- Scripts -->
     <script type="text/javascript" src="js/lib/min/require.min" data-main="js/app"></script>
@@ -18,10 +19,12 @@
 
   <body>
     <main>
-      <section>
-        <h1>Sheffield Hallam University</h1>
-        <h2>A city with over 50,000 students</h2>
-        <div>
+      <section class="hero" id="hero">
+        <span class="hero__image--background"></span>
+        <div class="container">
+          <h1 class="hero__title">Sheffield Hallam <span class="text--med-color">University</span></h1>
+          <h2 class="hero__subtitle">A city with over 50,000 students</h2>
+
           <nav role="main" class="menu">
             <ul>
               <span class="menu__trigger">Menu</span>
@@ -38,38 +41,43 @@
             </ul>
           </nav>
         </div>
-
-        <form>
-          <fieldset>
-            <span>I'm looking for</span><input type="search" name="search_term">
-            <span>Within</span>
-            <select name="search_area">
-              <option value="all">Whole site</option>
-              <option value="part-one">This part?</option>
-              <option value="part-two">Another part?!</option>
-              <option value="part-three">No, neither of those!</option>
-            </select>
-            <input type="submit">
-          </fieldset>
+        <form class="form--homepage">
+          <span class="gradient"></span>
+          <div class="container">
+            <fieldset>
+            <label>I'm looking for</label>
+              <input type="search" name="search_term">
+              <label>Within</label>
+              <select name="search_area">
+                <option value="all">Whole site</option>
+                <option value="part-one">This part?</option>
+                <option value="part-two">Another part?!</option>
+                <option value="part-three">No, neither of those!</option>
+              </select>
+              <input type="submit">
+            </fieldset>
+          </div>
         </form>
       </section>
 
-      <section>
-        <img/>
-        <div>
-          <a href="#0">Register for our next open day</a>
-        </div>
-        <img/>
-        <div>
-          <a href="#0">Are you an international student?</a>
-        </div>
-        <div>
-          <a href="#0">A brighter partner for your business</a>
-        </div>
-        <img/>
-        <img/>
-        <div>
-          <a href="#0">Order a prospectus today</a>
+      <section class="blocks">
+        <div class="row no-gutter">
+          <img src="img/filler.png" class="col-sm-3 blocks__block"/>
+          <div class="col-sm-3 blocks__block">
+            <a href="#0">Register for our next open day</a>
+          </div>
+          <img src="img/filler.png" class="col-sm-3 blocks__block"/>
+          <div class="col-sm-3 blocks__block">
+            <a href="#0">Are you an international student?</a>
+          </div>
+          <div class="col-sm-3 blocks__block">
+            <a href="#0">A brighter partner for your business</a>
+          </div class="col-sm-3 blocks__block">
+          <img src="img/filler.png" class="col-sm-3 blocks__block"/>
+          <div class="col-sm-3 blocks__block">
+            <a href="#0">Order a prospectus today</a>
+          </div>
+          <img src="img/filler.png" class="col-sm-3 blocks__block"/>
         </div>
         <aside>
           <span>Customise</span>
@@ -83,34 +91,45 @@
       </section>
     </main>
     <footer>
-      <nav role="social" class="menu">
-        <ul>
-          <li><a href="http://facebook.com">Facebook</a></li>
-          <li><a href="http://twitter.com">Twitter</a></li>
-          <li><a href="http://instagram.com">Instagram</a></li>
-          <li><a href="http://youtube.com">Youtube</a></li>
-          <li><a href="http://google.com">Google +</a></li>
-        </ul>
-      </nav>
-      <nav role="site_map" class="menu">
-        <ul>
-          <li><a href="#0">Find a course</a></li>
-          <li><a href="#0">Study with us</a></li>
-          <li><a href="#0">Order a prospectus</a></li>
-          <li><a href="#0">Do something else</a></li>
-          <li><a href="#0">Contact us</a></li>
-          <li><a href="#0">About us</a></li>
-          <li><a href="#0">Privacy Policy</a></li>
-        </ul>
-      </nav>
-      <p>Sheffield Hallam University, City Campus, Howard Street, Sheffield S1 1WB, UK. Phone +44 (0)114 225 5555. Fax +44 (0)114 225 4449</p>
-      <ul>
-        <li><a href="#0">How we use cookies</a></li>
-        <li><a href="#0">Accessibility</a></li>
-        <li><a href="#0">Site map</a></li>
-        <li><a href="#0">Terms &amp; conditions</a></li>
-        <li><a href="#0">Privacy policy</a></li>
-      </ul>
+      <div class="footer--one">
+        <div class="container">
+          <h3>Connect with us:</h3>
+          <ul class="menu menu--inline menu--social">
+            <li class="menu--social__item"><a href="http://facebook.com"><i class="fa fa-facebook"></i></a></li>
+            <li class="menu--social__item"><a href="http://twitter.com"><i class="fa fa-twitter"></i></a></li>
+            <li class="menu--social__item"><a href="http://instagram.com"><i class="fa fa-twitter"></i></a></li>
+            <li class="menu--social__item"><a href="http://youtube.com"><i class="fa fa-youtube"></i></a></li>
+            <li class="menu--social__item"><a href="http://google.com"><i class="fa fa-google-plus"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer--two">
+        <div class="container">
+          <nav role="site_map" class="menu">
+            <ul>
+              <li><a href="#0">Find a course</a></li>
+              <li><a href="#0">Study with us</a></li>
+              <li><a href="#0">Order a prospectus</a></li>
+              <li><a href="#0">Do something else</a></li>
+              <li><a href="#0">Contact us</a></li>
+              <li><a href="#0">About us</a></li>
+              <li><a href="#0">Privacy Policy</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="footer--three">
+        <div class="container">
+        <p>Sheffield Hallam University, City Campus, Howard Street, Sheffield S1 1WB, UK. Phone +44 (0)114 225 5555. Fax +44 (0)114 225 4449</p>
+          <ul>
+            <li><a href="#0">How we use cookies</a></li>
+            <li><a href="#0">Accessibility</a></li>
+            <li><a href="#0">Site map</a></li>
+            <li><a href="#0">Terms &amp; conditions</a></li>
+            <li><a href="#0">Privacy policy</a></li>
+          </ul>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
