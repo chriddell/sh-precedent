@@ -25,6 +25,17 @@ module.exports = function (grunt) {
       }
     },
 
+    uglify: {
+      options: {
+      },
+      my_target: {
+        files: {
+          'js/lib/min/require.min.js': ['js/lib/require.js'],
+          'js/lib/min/html5-shiv.min.js': ['js/lib/html5-shiv.js']
+        }
+      }
+    },
+
     browserSync: {
       dev: {
         bsFiles: {
@@ -43,6 +54,7 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-sass');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-browser-sync');
 
     grunt.registerTask('default', ['browserSync', 'watch']); // Grunt default tasks (run 'grunt')
