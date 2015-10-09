@@ -42,8 +42,40 @@ ul {
   list-style: none;
 }
 
+input, 
+select, 
+i.fa-search {
+  border: 1px solid $clr-light;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  background-color: transparent;
+  border-radius: 0;
+  -webkit-appearance: none;
+  color: $clr-lighter;
+  color: rgba(255,255,255,0.75);
+  padding: 1em;
+}
+
 label {
-  display: block;
   font-family: $fnt-clerk;
   color: $clr-lighter;
+  display: block;
+  @include respond-to(medium) {
+    display: inline-block;
+  }
+}
+
+footer ul {
+  margin: 0;
+  padding: 0;
+  > li {
+    display: inline-block;
+    padding: 0 7.5px 0 10px; // odd padding either side to adjust for strange inline-block bug
+
+    &:first-of-type {
+      padding-left: 0;
+    }
+    + li {
+      border-left: 1px solid $clr-light;
+    }
+  }
 }

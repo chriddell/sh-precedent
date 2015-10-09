@@ -17,44 +17,46 @@
 
   </head>
 
-  <body>
+  <body> 
+  <header>
+    <nav role="main" id="main-menu">
+      <ul class="menu menu--social">
+        <li class="mini-block menu--social__item"><a href="#0"><i class="fa fa-heart-o"></i></a></li>
+        <li class="mini-block menu--social__item"><a href="#0"><i class="fa fa-share-alt"></i></a></li>
+        <li class="mini-block menu--social__item"><a href="#0"><i class="fa fa-clock-o"></i></a></li>
+      </ul>
+      <ul class="menu menu--main">
+        <li><a href="#0">Home</a></li>
+        <li><a href="#0">About</a></li>
+        <li><a href="#0">Contact</a></li>
+      </ul>
+      <span class="menu__trigger mini-block">
+        <a href="#main-menu" class="menu__trigger--open"><i class="fa fa-bars"></i>Menu</a>
+        <a href="#0" class="menu__trigger--close"><i class="fa fa-close"></i></a>
+      </span>
+    </nav>
+  </header>
     <main>
       <section class="hero" id="hero">
         <span class="hero__image--background"></span>
         <div class="container">
           <h1 class="hero__title">Sheffield Hallam <span class="text--med-color">University</span></h1>
           <h2 class="hero__subtitle">A city with over 50,000 students</h2>
-
-          <nav role="main" class="menu">
-            <ul>
-              <span class="menu__trigger">Menu</span>
-              <li>Home</li>
-              <li>About</li>
-              <li>Contact</li>
-            </ul>
-          </nav>
-          <nav role="social" class="menu">
-            <ul>
-              <li>Favourite</li>
-              <li>Share</li>
-              <li>Contact</li>
-            </ul>
-          </nav>
         </div>
         <form class="form--homepage">
           <span class="gradient"></span>
           <div class="container">
             <fieldset>
-            <label>I'm looking for</label>
-              <input type="search" name="search_term">
-              <label>Within</label>
+            <label>I'm looking for...</label>
+              <input type="search" name="search_term" placeholder="Start searching...">
+              <label>Within...</label>
               <select name="search_area">
                 <option value="all">Whole site</option>
                 <option value="part-one">This part?</option>
                 <option value="part-two">Another part?!</option>
                 <option value="part-three">No, neither of those!</option>
               </select>
-              <input type="submit">
+              <i class="fa fa-search"></i>
             </fieldset>
           </div>
         </form>
@@ -79,8 +81,8 @@
           </div>
           <img src="img/filler.png" class="col-sm-3 blocks__block"/>
         </div>
-        <aside>
-          <span>Customise</span>
+        <aside id="customise">
+          <span><a href="#customise">Customise <i class="fa fa-wrench"></i></a></span>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
           quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -94,7 +96,7 @@
       <div class="footer--one">
         <div class="container">
           <h3>Connect with us:</h3>
-          <ul class="menu menu--inline menu--social">
+          <ul class="menu menu--social">
             <li class="menu--social__item"><a href="http://facebook.com"><i class="fa fa-facebook"></i></a></li>
             <li class="menu--social__item"><a href="http://twitter.com"><i class="fa fa-twitter"></i></a></li>
             <li class="menu--social__item"><a href="http://instagram.com"><i class="fa fa-twitter"></i></a></li>
@@ -120,7 +122,8 @@
       </div>
       <div class="footer--three">
         <div class="container">
-        <p>Sheffield Hallam University, City Campus, Howard Street, Sheffield S1 1WB, UK. Phone +44 (0)114 225 5555. Fax +44 (0)114 225 4449</p>
+        <p>Sheffield Hallam University, City Campus, Howard Street, Sheffield S1 1WB, UK.</p>
+        <p>Phone +44 (0)114 225 5555. Fax +44 (0)114 225 4449</p>
           <ul>
             <li><a href="#0">How we use cookies</a></li>
             <li><a href="#0">Accessibility</a></li>

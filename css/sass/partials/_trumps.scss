@@ -7,3 +7,11 @@
   padding-right: 0;
   padding-left: 0;
 }
+
+// Fix positioning on homepage submit
+.form--homepage input[type="submit"] {
+  @include respond-to(medium) {
+    position: relative;
+    top: 2px;
+  }
+}

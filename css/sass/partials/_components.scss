@@ -1,7 +1,7 @@
 /* Hero */
 .hero {
   padding-top: 2em;
-  @include respond-to(large){
+  @include respond-to(medium){
     height: 100vh;
     min-height: 620px;
   }
@@ -10,7 +10,7 @@
     max-width: 200px;
     line-height: 0.7;
 
-    @include respond-to(large) {
+    @include respond-to(medium) {
       font-size: $font-xxl;
       padding-top: 3.5em;
       padding-top: 15vh;
@@ -18,7 +18,7 @@
   }
 
   &__subtitle {
-    @include respond-to(large) {
+    @include respond-to(medium) {
       font-size: $font-xl;
       padding-top: 1.75em;
       padding-top: 15vh;
@@ -29,9 +29,9 @@
   &__subtitle {
     color: $clr-lighter;
   }
-
+  
   &__image--background {
-    @include respond-to(large){
+    @include respond-to(medium){
       display: block;
       height: 100vh;
       min-height: 620px;
@@ -50,58 +50,110 @@
 .menu {
   margin: 0;
   padding: 0;
+}
 
-  &--inline {
-    li {
-      display: inline-block;
+// Menu Main
+.menu--main {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  padding: 2em 0;
+  background-color: $clr-highlight-pink;
+  @include transition(all, 1s, ease);
+}
+
+.menu__trigger {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 75px;
+  @include transition(all, 1s, ease);
+
+  a {
+    width: 100%;
+
+    &.menu__trigger--close {
+      display: none;
     }
   }
 }
 
-.hero .menu {
+#main-menu:target {
   position: absolute;
   top: 0;
   right: 0;
+  width: 100%;
+
+  .menu__trigger {
+    background-color: $clr-highlight-pink;
+  }
+
+  .menu__trigger--close {
+    display: table-cell;
+  }
+  .menu__trigger--open {
+    display: none;
+  }
+
+  .menu--main {
+    width: 20%;
+  }
+}
+
+// Social Menu
+header .menu--social {
+  position: absolute;
+  top: 0;
+  right: 76px;
+
+  &__item {
+    @include miniBlock($clr-dark);
+    float: right;
+
+    a > i {
+      font-size: $font-m;
+    }
+
+    &:not(:last-of-type) {
+      margin-left: 1px;
+    }
+  }
 }
 
 .menu--social {
   &__item {
-    background-color: $clr-light;
-    width: 50px;
-    height: 50px;
-    text-align: center;
+    @include miniBlock($clr-light);
+    float: left;
 
     &:not(:first-of-type){
       margin-left: 1px;
     }
 
-    a {
-      display: table;
-      height: 100%;
-      width: 100%;
-
-      > i {
-        font-size: $font-l;
-        display: table-cell;
-        vertical-align: middle;
-      }
+    a > i {
+      font-size: $font-l;
     }
   }
 }
 
 /* Forms */
 .form--homepage {
-  padding: 2em 0;
+  padding: 3em 0;
 
-  @include respond-to(large) {
+  @include respond-to(medium) {
     width: 100%;
     position: absolute;
     bottom: 0;
+    font-size: $font-m;
     background-color: rgba(0,0,0,0.5);
   }
 
   label {
     margin-bottom: 0.25em;
+
+    @include respond-to(medium) {
+      margin-right: 1em;
+    }
 
     &:nth-of-type(2){
       margin-top: 1em;
@@ -110,25 +162,34 @@
 
   input:not([type='submit']) {
     width: 100%;
-  }
-
-  select, 
-  input[type="submit"] {
-    float: left;
+    @include respond-to(medium) {
+      width: auto;
+      margin-right: 0.5em;
+    }
   }
 
   select {
-    width: 70%;
-    margin-right: 5%;
+    float: left;
+    width: 75%;
+    width: calc(100% - 65px);
+    @include respond-to(medium) {
+      width: auto;
+      float: none;
+      margin-right: 0.5em;
+    }
   }
 
-  input[type='submit'] {
-    width: 25%;
+  input, 
+  select, 
+  i.fa-search {
+    height: 3em;
   }
 }
 
 /* Blocks */
 .blocks {
+  position: relative;
+
   &__block {
     display: table;
     height: 125px;
@@ -186,6 +247,41 @@
   }
 }
 
+// "Customise"
 aside {
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  > span {
+    display: table;
+    position: absolute;
+    right: -75px;
+    top: 37px;
+    width: 125px;
+    height: 50px;
+    background-color: $clr-dark;
+    color: $clr-light;
+    text-align: center;
+    @include rotate(270);
+
+    > a {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+
+  p {
+    float: left;
+    width: 0;
+    height: 200px;
+    overflow: hidden;
+  }
+}
+
+#customise:target {
+  p {
+    width: 300px;
+    @include transition(all, 1s, ease);
+  }
 }

@@ -819,6 +819,16 @@ hr {
 /* Colors */
 /* Breakpoints */
 /*  Breakpoints - http://www.sitepoint.com/managing-responsive-breakpoints-sass/ */
+.mini-block {
+  display: table;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  background-color: #d6d6d6; }
+  .mini-block > * {
+    display: table-cell;
+    vertical-align: middle; }
+
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Set default font family to sans-serif.
@@ -1213,27 +1223,53 @@ a:visited {
 ul {
   list-style: none; }
 
+input,
+select,
+i.fa-search {
+  border: 1px solid #d6d6d6;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  background-color: transparent;
+  border-radius: 0;
+  -webkit-appearance: none;
+  color: #ffffff;
+  color: rgba(255, 255, 255, 0.75);
+  padding: 1em; }
+
 label {
-  display: block;
   font-family: "Clerkenwell", "Times New Roman", serif;
-  color: #ffffff; }
+  color: #ffffff;
+  display: block; }
+  @media (min-width: 992px) {
+    label {
+      display: inline-block; } }
+
+footer ul {
+  margin: 0;
+  padding: 0; }
+  footer ul > li {
+    display: inline-block;
+    padding: 0 7.5px 0 10px; }
+    footer ul > li:first-of-type {
+      padding-left: 0; }
+    footer ul > li + li {
+      border-left: 1px solid #d6d6d6; }
 
 /* Hero */
 .hero {
   padding-top: 2em; }
-  @media (min-width: 1200px) {
+  @media (min-width: 992px) {
     .hero {
       height: 100vh;
       min-height: 620px; } }
   .hero__title {
     max-width: 200px;
     line-height: 0.7; }
-    @media (min-width: 1200px) {
+    @media (min-width: 992px) {
       .hero__title {
         font-size: 3em;
         padding-top: 3.5em;
         padding-top: 15vh; } }
-  @media (min-width: 1200px) {
+  @media (min-width: 992px) {
     .hero__subtitle {
       font-size: 2.25em;
       padding-top: 1.75em;
@@ -1241,7 +1277,7 @@ label {
   .hero__title,
   .hero__subtitle {
     color: #ffffff; }
-  @media (min-width: 1200px) {
+  @media (min-width: 992px) {
     .hero__image--background {
       display: block;
       height: 100vh;
@@ -1258,79 +1294,146 @@ label {
 .menu {
   margin: 0;
   padding: 0; }
-  .menu--inline li {
-    display: inline-block; }
 
-.hero .menu {
+.menu--main {
   position: absolute;
   top: 0;
-  right: 0; }
+  right: 0;
+  width: 0;
+  padding: 2em 0;
+  background-color: #c92059;
+  -webkit-transition: all, 1s, ease;
+  -moz-transition: all, 1s, ease;
+  -ms-transition: all, 1s, ease;
+  -o-transition: all, 1s, ease;
+  transition: all, 1s, ease; }
 
-.menu--social__item {
-  background-color: #d6d6d6;
-  width: 50px;
-  height: 50px;
-  text-align: center; }
-  .menu--social__item:not(:first-of-type) {
-    margin-left: 1px; }
-  .menu--social__item a {
-    display: table;
-    height: 100%;
+.menu__trigger {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 75px;
+  -webkit-transition: all, 1s, ease;
+  -moz-transition: all, 1s, ease;
+  -ms-transition: all, 1s, ease;
+  -o-transition: all, 1s, ease;
+  transition: all, 1s, ease; }
+  .menu__trigger a {
     width: 100%; }
-    .menu--social__item a > i {
-      font-size: 1.75em;
+    .menu__trigger a.menu__trigger--close {
+      display: none; }
+
+#main-menu:target {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%; }
+  #main-menu:target .menu__trigger {
+    background-color: #c92059; }
+  #main-menu:target .menu__trigger--close {
+    display: table-cell; }
+  #main-menu:target .menu__trigger--open {
+    display: none; }
+  #main-menu:target .menu--main {
+    width: 20%; }
+
+header .menu--social {
+  position: absolute;
+  top: 0;
+  right: 76px; }
+  header .menu--social__item {
+    display: table;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    background-color: #434343;
+    float: right; }
+    header .menu--social__item > * {
       display: table-cell;
       vertical-align: middle; }
+    header .menu--social__item a > i {
+      font-size: 1.25em; }
+    header .menu--social__item:not(:last-of-type) {
+      margin-left: 1px; }
+
+.menu--social__item {
+  display: table;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  background-color: #d6d6d6;
+  float: left; }
+  .menu--social__item > * {
+    display: table-cell;
+    vertical-align: middle; }
+  .menu--social__item:not(:first-of-type) {
+    margin-left: 1px; }
+  .menu--social__item a > i {
+    font-size: 1.75em; }
 
 /* Forms */
 .form--homepage {
-  padding: 2em 0; }
-  @media (min-width: 1200px) {
+  padding: 3em 0; }
+  @media (min-width: 992px) {
     .form--homepage {
       width: 100%;
       position: absolute;
       bottom: 0;
+      font-size: 1.25em;
       background-color: rgba(0, 0, 0, 0.5); } }
   .form--homepage label {
     margin-bottom: 0.25em; }
+    @media (min-width: 992px) {
+      .form--homepage label {
+        margin-right: 1em; } }
     .form--homepage label:nth-of-type(2) {
       margin-top: 1em; }
   .form--homepage input:not([type='submit']) {
     width: 100%; }
-  .form--homepage select,
-  .form--homepage input[type="submit"] {
-    float: left; }
+    @media (min-width: 992px) {
+      .form--homepage input:not([type='submit']) {
+        width: auto;
+        margin-right: 0.5em; } }
   .form--homepage select {
-    width: 70%;
-    margin-right: 5%; }
-  .form--homepage input[type='submit'] {
-    width: 25%; }
+    float: left;
+    width: 75%;
+    width: calc(100% - 65px); }
+    @media (min-width: 992px) {
+      .form--homepage select {
+        width: auto;
+        float: none;
+        margin-right: 0.5em; } }
+  .form--homepage input,
+  .form--homepage select,
+  .form--homepage i.fa-search {
+    height: 3em; }
 
 /* Blocks */
-.blocks__block {
-  display: table;
-  height: 125px;
-  min-width: 100%; }
-  @media (min-width: 767px) {
-    .blocks__block {
-      min-width: 0;
-      height: 200px; } }
-  .blocks__block > a {
-    display: table-cell;
-    vertical-align: middle;
-    font-size: 1.25em;
-    font-family: "Clerkenwell", "Times New Roman", serif;
-    text-align: center; }
-  .blocks__block:nth-of-type(odd) {
-    background-color: #631b41; }
-  .blocks__block:nth-of-type(even) {
-    background-color: #c92059; }
-
-.blocks img.blocks__block {
-  display: none; }
-  @media (min-width: 767px) {
-    .blocks img.blocks__block {
-      display: table; } }
+.blocks {
+  position: relative; }
+  .blocks__block {
+    display: table;
+    height: 125px;
+    min-width: 100%; }
+    @media (min-width: 767px) {
+      .blocks__block {
+        min-width: 0;
+        height: 200px; } }
+    .blocks__block > a {
+      display: table-cell;
+      vertical-align: middle;
+      font-size: 1.25em;
+      font-family: "Clerkenwell", "Times New Roman", serif;
+      text-align: center; }
+    .blocks__block:nth-of-type(odd) {
+      background-color: #631b41; }
+    .blocks__block:nth-of-type(even) {
+      background-color: #c92059; }
+  .blocks img.blocks__block {
+    display: none; }
+    @media (min-width: 767px) {
+      .blocks img.blocks__block {
+        display: table; } }
 
 /* Footer */
 .footer--one,
@@ -1350,7 +1453,40 @@ label {
     color: #d6d6d6; }
 
 aside {
-  display: none; }
+  position: absolute;
+  top: 0;
+  left: 0; }
+  aside > span {
+    display: table;
+    position: absolute;
+    right: -75px;
+    top: 37px;
+    width: 125px;
+    height: 50px;
+    background-color: #434343;
+    color: #d6d6d6;
+    text-align: center;
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg); }
+    aside > span > a {
+      display: table-cell;
+      vertical-align: middle; }
+  aside p {
+    float: left;
+    width: 0;
+    height: 200px;
+    overflow: hidden; }
+
+#customise:target p {
+  width: 300px;
+  -webkit-transition: all, 1s, ease;
+  -moz-transition: all, 1s, ease;
+  -ms-transition: all, 1s, ease;
+  -o-transition: all, 1s, ease;
+  transition: all, 1s, ease; }
 
 /* Utility Classes */
 .text--med-color {
@@ -1359,5 +1495,10 @@ aside {
 .no-gutter > [class*='col-'] {
   padding-right: 0;
   padding-left: 0; }
+
+@media (min-width: 992px) {
+  .form--homepage input[type="submit"] {
+    position: relative;
+    top: 2px; } }
 
 /*# sourceMappingURL=style.css.map */

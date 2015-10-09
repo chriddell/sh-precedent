@@ -17,3 +17,42 @@
         + "Please make sure it is defined in `$breakpoints` map.";
   }
 }
+
+// Generate block-like links
+@mixin miniBlock($bgColor) {
+  display: table;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  background-color: $bgColor;
+
+  > * {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+// And generate a class
+.mini-block {
+  @include miniBlock($clr-light);
+}
+
+// Transitions
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+// Tranforms
+@mixin transform($transforms) {
+     -moz-transform: $transforms;
+       -o-transform: $transforms;
+      -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+          transform: $transforms;
+}
+@mixin rotate($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
