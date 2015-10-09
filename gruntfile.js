@@ -31,7 +31,8 @@ module.exports = function (grunt) {
       my_target: {
         files: {
           'js/lib/min/require.min.js': ['js/lib/require.js'],
-          'js/lib/min/html5-shiv.min.js': ['js/lib/html5-shiv.js']
+          'js/lib/min/html5-shiv.min.js': ['js/lib/html5-shiv.js'],
+          'js/lib/modules/min/slide.min.js': ['js/lib/modules/slide.js']
         }
       }
     },

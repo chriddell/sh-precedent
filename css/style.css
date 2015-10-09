@@ -1455,11 +1455,11 @@ header .menu--social {
 aside {
   position: absolute;
   top: 0;
-  left: 0; }
+  left: -250px; }
   aside > span {
     display: table;
     position: absolute;
-    right: -75px;
+    right: -87px;
     top: 37px;
     width: 125px;
     height: 50px;
@@ -1471,23 +1471,29 @@ aside {
     -ms-transform: rotate(270deg);
     -webkit-transform: rotate(270deg);
     transform: rotate(270deg); }
-    aside > span > a {
+    aside > span:hover {
+      cursor: pointer; }
+    aside > span > span {
       display: table-cell;
       vertical-align: middle; }
   aside p {
     float: left;
-    width: 0;
-    height: 200px;
-    overflow: hidden; }
+    width: 250px;
+    overflow: hidden;
+    background-color: #c92059;
+    margin: 0;
+    padding: 1em; }
 
-#customise:target p {
-  width: 300px;
-  -webkit-transition: all, 1s, ease;
-  -moz-transition: all, 1s, ease;
-  -ms-transition: all, 1s, ease;
-  -o-transition: all, 1s, ease;
-  transition: all, 1s, ease; }
+.customise__trigger--close {
+  display: table;
+  display: none; }
 
+/* #customise:target {
+  p {
+    width: 300px;
+    @include transition(all, 1s, ease);
+  }
+} */
 /* Utility Classes */
 .text--med-color {
   color: #adadad; }
