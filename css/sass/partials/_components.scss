@@ -52,89 +52,90 @@
   padding: 0;
 }
 
-// Menu Main
-.menu--main {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 0;
-  padding: 2em 0;
-  background-color: $clr-highlight-pink;
-  @include transition(all, 1s, ease);
-}
-
-.menu__trigger {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 75px;
-  @include transition(all, 1s, ease);
-
-  a {
-    width: 100%;
-
-    &.menu__trigger--close {
-      display: none;
-    }
+  // Main
+  .menu--main {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 0;
+    padding: 2em 0;
+    background-color: $clr-highlight-pink;
+    @include transition(all, 1s, ease);
   }
-}
-
-#main-menu:target {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
 
   .menu__trigger {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 75px;
     background-color: $clr-highlight-pink;
-  }
+    @include transition(all, 1s, ease);
 
-  .menu__trigger--close {
-    display: table-cell;
-  }
-  .menu__trigger--open {
-    display: none;
-  }
+    a {
+      width: 100%;
 
-  .menu--main {
-    width: 20%;
-  }
-}
-
-// Social Menu
-header .menu--social {
-  position: absolute;
-  top: 0;
-  right: 76px;
-
-  &__item {
-    @include miniBlock($clr-dark);
-    float: right;
-
-    a > i {
-      font-size: $font-m;
-    }
-
-    &:not(:last-of-type) {
-      margin-left: 1px;
+      &.menu__trigger--close {
+        display: none;
+      }
     }
   }
-}
 
-.menu--social {
-  &__item {
-    @include miniBlock($clr-light);
-    float: left;
+  #main-menu:target {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
 
-    &:not(:first-of-type){
-      margin-left: 1px;
+    .menu__trigger {
+      background-color: $clr-highlight-pink;
     }
 
-    a > i {
-      font-size: $font-l;
+    .menu__trigger--close {
+      display: table-cell;
+    }
+    .menu__trigger--open {
+      display: none;
+    }
+
+    .menu--main {
+      width: 300px;
     }
   }
-}
+
+  // Social
+  .menu--social {
+    &__item {
+      @include miniBlock($clr-light);
+      float: left;
+
+      &:not(:first-of-type){
+        margin-left: 1px;
+      }
+
+      a > i {
+        font-size: $font-l;
+      }
+    }
+  }
+
+  header .menu--social {
+    position: absolute;
+    top: 0;
+    right: 76px;
+
+    &__item {
+      @include miniBlock($clr-dark);
+      float: right;
+
+      a > i {
+        font-size: $font-m;
+      }
+
+      &:not(:last-of-type) {
+        margin-left: 1px;
+      }
+    }
+  }
 
 /* Forms */
 .form--homepage {
@@ -247,7 +248,7 @@ header .menu--social {
   }
 }
 
-// "Customise"
+/* "Customise" */
 aside {
   position: absolute;
   top: 0;
@@ -286,13 +287,5 @@ aside {
 }
 
 .customise__trigger--close {
-  display: table;
   display: none;
 }
-
-/* #customise:target {
-  p {
-    width: 300px;
-    @include transition(all, 1s, ease);
-  }
-} */

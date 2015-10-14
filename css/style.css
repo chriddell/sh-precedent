@@ -1297,7 +1297,7 @@ footer ul {
 
 .menu--main {
   position: absolute;
-  top: 0;
+  top: 50px;
   right: 0;
   width: 0;
   padding: 2em 0;
@@ -1313,6 +1313,7 @@ footer ul {
   top: 0;
   right: 0;
   width: 75px;
+  background-color: #c92059;
   -webkit-transition: all, 1s, ease;
   -moz-transition: all, 1s, ease;
   -ms-transition: all, 1s, ease;
@@ -1335,7 +1336,22 @@ footer ul {
   #main-menu:target .menu__trigger--open {
     display: none; }
   #main-menu:target .menu--main {
-    width: 20%; }
+    width: 300px; }
+
+.menu--social__item {
+  display: table;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  background-color: #d6d6d6;
+  float: left; }
+  .menu--social__item > * {
+    display: table-cell;
+    vertical-align: middle; }
+  .menu--social__item:not(:first-of-type) {
+    margin-left: 1px; }
+  .menu--social__item a > i {
+    font-size: 1.75em; }
 
 header .menu--social {
   position: absolute;
@@ -1355,21 +1371,6 @@ header .menu--social {
       font-size: 1.25em; }
     header .menu--social__item:not(:last-of-type) {
       margin-left: 1px; }
-
-.menu--social__item {
-  display: table;
-  height: 50px;
-  width: 50px;
-  text-align: center;
-  background-color: #d6d6d6;
-  float: left; }
-  .menu--social__item > * {
-    display: table-cell;
-    vertical-align: middle; }
-  .menu--social__item:not(:first-of-type) {
-    margin-left: 1px; }
-  .menu--social__item a > i {
-    font-size: 1.75em; }
 
 /* Forms */
 .form--homepage {
@@ -1452,6 +1453,7 @@ header .menu--social {
   .footer--three p {
     color: #d6d6d6; }
 
+/* "Customise" */
 aside {
   position: absolute;
   top: 0;
@@ -1485,15 +1487,8 @@ aside {
     padding: 1em; }
 
 .customise__trigger--close {
-  display: table;
   display: none; }
 
-/* #customise:target {
-  p {
-    width: 300px;
-    @include transition(all, 1s, ease);
-  }
-} */
 /* Utility Classes */
 .text--med-color {
   color: #adadad; }
